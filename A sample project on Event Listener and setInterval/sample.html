@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name             :  <input type="text" id="name" />
+    Delay In Seconds : <input type="text" id="time" />
+    <div ></div>
+    <div></div>
+</body>
+<script>
+    var n=document.getElementById("name"), nameInHtml=document.getElementsByTagName("div")[0]
+    var c=document.getElementsByTagName("div")[1],
+    delay=document.getElementById("time");
+    let wantToChangeName=true, time=null
+    var myTimeout=null;
+    let name='', callOnce=0;
+    n.addEventListener("keyup", function () {
+        if(n.value!=null && time!=null && ((new Date().getTime()-time)/1000>(delay.value?delay.value:20))) {
+            wantToChangeName=confirm("Do you want to Modify name");
+            time=new Date().getTime();
+            if(wantToChangeName==false)
+                callOnce=1;
+        }
+        if(time==null)
+            time=new Date().getTime();
+        if(wantToChangeName) {
+            if(!Boolean(n.value))
+                time=null;
+            else
+                time=new Date().getTime();
+            if(n.value) 
+                nameInHtml.innerHTML=`<h1>Hi ${n.value}</h2>`;
+            else 
+                nameInHtml.innerHTML="";
+            name=this.value;
+            c.innerHTML='';
+        }
+        else {
+            this.value=name;
+            nameInHtml.innerHTML=`<h1>Hi ${n.value}</h2>`;
+            if(callOnce==1) {
+                myTimeout = setInterval(()=> {
+                callOnce+=1;
+                c.innerHTML=
+                `you have to wait for ${((delay.value?delay.value:20)-(new Date().getTime()-time)/1000).toFixed(2)} sec to modify`;
+                if((delay.value?delay.value:20)-(new Date().getTime()-time)/1000<=0) {
+                    clearInterval(myTimeout);
+                    c.innerHTML="You can modify now";
+                    callOnce=0;
+                    wantToChangeName=true;
+                    time=null;
+                }
+                }, 1000);
+            }
+        }
+    });
+</script>
+</html>
