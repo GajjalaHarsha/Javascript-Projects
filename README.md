@@ -11,15 +11,15 @@ It has following requirements<br/>
 
 - It take 2 inputs 'name' and 'Delay In Seconds'<br/>
 
-- whenever we modify 'Name' it should display below input saying 'Hi ---- 'whatever input given in name get updated in ----<br/>
+- whenever we modify 'Name' it should display below input saying 'Hi ---- 'whatever input given in name get updated in ----
 
-- Suppose if you dont modify input for 'Delay In seconds' by default 20 sec/ whatever input is given in it. <br/>
+- Suppose if you dont modify input for 'Delay In seconds' by default 20 sec/ whatever input is given in it. 
 
-          1.Pop up should get displayed, saying "do you want modify name", If you press <br/>
+          1.Pop up should get displayed, saying "do you want modify name", If you press 
 
-			'ok'     ->you can continue to modify <br/>
+			- 'ok'     ->you can continue to modify 
 
-  			'cancel' -> you cant modify 'Name i/p' for next 20sec/'Delay In seconds'. Even If you try, it should not get updated. <br/>
+  			- 'cancel' -> you cant modify 'Name i/p' for next 20sec/'Delay In seconds'. Even If you try, it should not get updated. 
 
 - Now when you click 'cancel', timer should get displayed below that ' you have to wait for ---- sec from now' as -- should get updated every sec <br/>
 
