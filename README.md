@@ -15,7 +15,7 @@ It has following requirements<br/>
 
 - Suppose if you dont modify input for 'Delay In seconds' by default 20 sec/ whatever input is given in it. 
 
-          1.Pop up should get displayed, saying "do you want modify name", If you press 
+          * Pop up should get displayed, saying "do you want modify name", If you press 
 
 			- 'ok'     ->you can continue to modify 
 
